@@ -1,3 +1,3 @@
-from .configs.app import create_app
+from project.configs.setup import create_app
 
 app = create_app()

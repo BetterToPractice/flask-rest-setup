@@ -4,10 +4,10 @@ from . import commands
 from .settings import Settings
 
 
-def create_app(setting_object=Settings):
+def create_app(setting=Settings):
     app = Flask(__name__.split(".")[0])
 
-    load_config(app, setting=setting_object)
+    load_setting(app, setting=setting)
 
     register_blueprints(app)
     register_commands(app)
@@ -16,7 +16,7 @@ def create_app(setting_object=Settings):
     return app
 
 
-def load_config(app, setting):
+def load_setting(app, setting):
     app.config.from_object(setting)
 
 
