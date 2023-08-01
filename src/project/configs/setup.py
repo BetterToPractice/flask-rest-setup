@@ -22,11 +22,13 @@ def load_setting(app, setting):
 
 def register_blueprints(app):
     from project.apps.core import core as core_blueprint
+
     app.register_blueprint(core_blueprint)
 
 
 def register_extensions(app):
     from .extensions import app_fairy
+
     app_fairy.init_app(app)
 
 
