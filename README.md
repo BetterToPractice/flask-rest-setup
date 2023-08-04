@@ -3,7 +3,9 @@ Flask Setup
 
 
 ### How To Run
-```commandline
+```
+export FLASK_APP=main.py
+
 pip install -r requirements.txt
 cd src/project
 flask run --reload
