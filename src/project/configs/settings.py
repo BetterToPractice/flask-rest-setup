@@ -21,3 +21,10 @@ class Settings:
     # API Fairy
     # https://apifairy.readthedocs.io/en/latest/intro.html
     APIFAIRY_UI_PATH = "/"
+
+    # SQLAlchemy
+    # https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL", default="sqlite:///db.sqlite3")
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    DATABASE_QUERY_TIMEOUT = 0.1
+    SQLALCHEMY_RECORD_QUERIES = True

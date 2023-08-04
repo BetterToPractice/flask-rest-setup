@@ -27,9 +27,11 @@ def register_blueprints(app):
 
 
 def register_extensions(app):
-    from .extensions import app_fairy
+    from project.extensions import app_fairy, db, migrate
 
     app_fairy.init_app(app)
+    db.init_app(app)
+    migrate.init_app(app, db=db)
 
 
 def register_commands(app):
