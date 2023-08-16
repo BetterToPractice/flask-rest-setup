@@ -1,8 +1,4 @@
-from . import core
-
-
-@core.get("/foo")
-def foo_view():
+def home_view():
     return {
         "message": "foo_bar",
     }

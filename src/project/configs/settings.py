@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 # Path
 ROOT_DIR = Path(__file__).parent.parent.parent
-APP_DIR = Path(__file__).parent
+APP_DIR = Path(__file__).parent.parent
 
 
 # Python Dotenv
@@ -20,7 +20,7 @@ class Settings:
 
     # API Fairy
     # https://apifairy.readthedocs.io/en/latest/intro.html
-    APIFAIRY_UI_PATH = "/"
+    APIFAIRY_UI_PATH = "/docs"
 
     # SQLAlchemy
     # https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/
