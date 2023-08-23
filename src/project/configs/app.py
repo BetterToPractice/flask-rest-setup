@@ -25,16 +25,15 @@ def register_blueprints(app):
 
 def register_extensions(app):
     from project.configs import plugins
-    from project.extensions import app_fairy, db, migrate, pluggy
+    from project.extensions import api_fairy, bcrypt, db, ma, migrate, pluggy
 
-    app_fairy.init_app(app)
+    ma.init_app(app)
+    api_fairy.init_app(app)
     db.init_app(app)
     migrate.init_app(app, db=db)
+    bcrypt.init_app(app)
     pluggy.init_app(
-        app,
-        plugin_name="plugins",
-        hook_specs=plugins,
-        apps_paths="apps",
+        app, plugin_name="plugins", hook_specs=plugins, apps_paths="apps", ignore_imports_prefix=[".models"]
     )
 
 

@@ -11,5 +11,9 @@ docker-compose up -d --build
 export FLASK_APP=main.py
 pip install -r requirements.txt
 cd src/project
+
+# migrate
+flask db upgrade
+# run application
 flask run --reload
 ```
