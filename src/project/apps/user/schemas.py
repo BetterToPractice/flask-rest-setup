@@ -1,4 +1,3 @@
-from project.apps.user.models import User
 from project.extensions import ma
 
 

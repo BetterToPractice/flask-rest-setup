@@ -3,6 +3,7 @@ exclude = [
     '.git',
     '__pycache__',
     'docs/',
+    'migrations',
     'venv/',
     'env/',
 ]
