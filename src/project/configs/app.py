@@ -20,7 +20,7 @@ def load_setting(app):
 
 
 def register_blueprints(app):
-    app.extensions["pluggy"].hook.load_routes(app=app)
+    app.extensions["plugin"].hook.load_routes(app=app)
 
 
 def register_extensions(app):

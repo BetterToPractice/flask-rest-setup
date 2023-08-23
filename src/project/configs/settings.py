@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 
 # Path
 ROOT_DIR = Path(__file__).parent.parent.parent
-APP_DIR = Path(__file__).parent.parent
 
 
 # Python Dotenv
@@ -14,6 +13,7 @@ load_dotenv(dotenv_path=ROOT_DIR)
 
 
 class Settings:
+    APP_DIR = Path(__file__).parent.parent
     APP_NAME = "project"
     FLASK_DEBUG = os.environ.get("DEBUG", default=False)
     FLASK_ENV = os.environ.get("FLASK_ENV", default="development")
