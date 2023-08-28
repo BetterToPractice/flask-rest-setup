@@ -9,6 +9,7 @@ marshmallow-sqlalchemy==0.29.0
 Flask-Migrate==4.0.4
 Flask-Bcrypt==1.0.1
 Flask-Compress==1.13
+Flask-Cors==4.0.0
 
 Sphinx==7.1.1
 
