@@ -1,0 +1,6 @@
+def login_view():
+    ...
+
+
+def register_view():
+    ...

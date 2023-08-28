@@ -28,3 +28,8 @@ class Settings:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DATABASE_QUERY_TIMEOUT = 0.1
     SQLALCHEMY_RECORD_QUERIES = True
+
+    # Cors
+    # https://flask-cors.corydolphin.com/en/latest/api.html
+    CORS_ALLOW_HEADERS = "*"
+    CORS_ORIGINS = "*"
