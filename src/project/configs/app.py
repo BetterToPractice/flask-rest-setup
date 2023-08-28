@@ -6,8 +6,8 @@ from .settings import Settings
 
 def create_app():
     app = Flask(__name__.split(".")[0])
-
     load_setting(app)
+
     register_extensions(app)
     register_blueprints(app)
     register_commands(app)

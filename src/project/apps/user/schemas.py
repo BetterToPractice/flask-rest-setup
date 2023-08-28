@@ -9,3 +9,4 @@ class UserSchema(ma.Schema):
 
 
 users_schema = UserSchema(many=True)
+user_schema = UserSchema()

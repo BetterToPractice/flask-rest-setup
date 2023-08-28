@@ -1,13 +1,16 @@
 from apifairy import response
-from sqlalchemy import select
-
-from project.extensions import db
 
 from .models import User
-from .schemas import users_schema
+from .schemas import user_schema, users_schema
 
 
 @response(users_schema)
 def user_list_view():
-    users = db.session.execute(select(User).order_by(User.username)).scalars()
+    users = User.query.all()
     return users
+
+
+@response(user_schema)
+def user_detail_view(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    return user
