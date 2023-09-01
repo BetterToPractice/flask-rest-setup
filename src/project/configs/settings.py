@@ -21,6 +21,7 @@ class Settings:
     # API Fairy
     # https://apifairy.readthedocs.io/en/latest/intro.html
     APIFAIRY_UI_PATH = "/docs"
+    APIFAIRY_UI = "swagger_ui"
 
     # SQLAlchemy
     # https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/

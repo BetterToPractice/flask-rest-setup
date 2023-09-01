@@ -15,7 +15,7 @@ class FlaskHelmet:
             response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
 
             # Content-Security-Policy header specifies the content sources that the browser should load for the page.
-            response.headers['Content-Security-Policy'] = "default-src 'self'"
+            # response.headers['Content-Security-Policy'] = "default-src 'self'"
 
             # Referrer-Policy header specifies the value of the Referer header sent with requests.
             response.headers['Referrer-Policy'] = 'no-referrer'

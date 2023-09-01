@@ -1,4 +1,6 @@
+from project.apps.core.schemas import PaginationSchema
 from project.extensions import ma
+from marshmallow import fields
 
 
 class UserSchema(ma.Schema):
@@ -8,5 +10,10 @@ class UserSchema(ma.Schema):
     email = ma.String()
 
 
-users_schema = UserSchema(many=True)
+class UserPaginationSchema(ma.Schema):
+    data = fields.Nested(UserSchema(many=True))
+    pagination = fields.Nested(PaginationSchema())
+
+
+user_pagination_schema = UserPaginationSchema()
 user_schema = UserSchema()

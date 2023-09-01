@@ -5,6 +5,7 @@ from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+from flask_rest_paginate import Pagination
 
 from project.libs.helmet import FlaskHelmet
 from project.libs.plugin import Plugin
@@ -18,3 +19,4 @@ ma = Marshmallow()
 compress = Compress()
 cors = CORS()
 helmet = FlaskHelmet()
+pagination = Pagination()

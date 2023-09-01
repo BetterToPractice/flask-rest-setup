@@ -1,13 +1,14 @@
 from apifairy import response
 
 from .models import User
-from .schemas import user_schema, users_schema
+from .schemas import user_schema, user_pagination_schema
+from project.extensions import pagination
 
 
-@response(users_schema)
+@response(user_pagination_schema)
 def user_list_view():
-    users = User.query.all()
-    return users
+    result = pagination.paginate(User.query.all(), user_schema, marshmallow=True)
+    return result
 
 
 @response(user_schema)
