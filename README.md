@@ -1,19 +1,26 @@
-Flask Setup
+Flask Rest Setup
 =================================
+[![Format Check](https://github.com/BetterToPractice/flask-rest-setup/actions/workflows/main.yml/badge.svg)](https://github.com/BetterToPractice/flask-rest-setup/actions/workflows/main.yml)
 
 
 ### How To Run
 ```
-# provide db, etc
+# Run db, etc
 docker-compose up -d --build
 
-# run script
-export FLASK_APP=main.py
-pip install -r requirements.txt
+# Go to Project location
 cd src/project
 
-# migrate
+# Copy env from example
+cp .env.example .env
+
+# Install requirements
+pip install -r requirements.txt
+
+# Run migrate
 flask db upgrade
-# run application
+
+# Run application
+export FLASK_APP=main.py
 flask run --reload
 ```
