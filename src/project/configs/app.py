@@ -25,7 +25,18 @@ def register_blueprints(app):
 
 def register_extensions(app):
     from project.configs import plugins
-    from project.extensions import api_fairy, bcrypt, db, ma, migrate, pluggy, compress, cors, helmet, pagination
+    from project.extensions import (
+        api_fairy,
+        bcrypt,
+        compress,
+        cors,
+        db,
+        helmet,
+        ma,
+        migrate,
+        pagination,
+        pluggy,
+    )
 
     cors.init_app(app)
     compress.init_app(app)

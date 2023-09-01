@@ -1,8 +1,9 @@
 from apifairy import response
 
-from .models import User
-from .schemas import user_schema, user_pagination_schema
 from project.extensions import pagination
+
+from .models import User
+from .schemas import user_pagination_schema, user_schema
 
 
 @response(user_pagination_schema)

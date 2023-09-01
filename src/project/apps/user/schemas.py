@@ -1,6 +1,7 @@
+from marshmallow import fields
+
 from project.apps.core.schemas import PaginationSchema
 from project.extensions import ma
-from marshmallow import fields
 
 
 class UserSchema(ma.Schema):

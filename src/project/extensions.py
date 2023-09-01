@@ -1,11 +1,11 @@
 from apifairy import APIFairy
 from flask_bcrypt import Bcrypt
 from flask_compress import Compress
+from flask_cors import CORS
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
-from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
 from flask_rest_paginate import Pagination
+from flask_sqlalchemy import SQLAlchemy
 
 from project.libs.helmet import FlaskHelmet
 from project.libs.plugin import Plugin
