@@ -6,7 +6,7 @@ Flask Rest Setup
 ### How To Run
 ```
 # Run db, etc
-docker-compose up -d --build
+docker-compose -f deploy/local/docker-compose.yml up -d --build
 
 # Go to Project location
 cd src/project
