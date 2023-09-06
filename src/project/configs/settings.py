@@ -20,6 +20,7 @@ class Settings:
 
     # API Fairy
     # https://apifairy.readthedocs.io/en/latest/intro.html
+    APIFAIRY_TITLE = "Flask Setup Docs"
     APIFAIRY_UI_PATH = "/docs"
     APIFAIRY_UI = "swagger_ui"
 

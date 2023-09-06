@@ -1,4 +1,5 @@
+from flask import redirect
+
+
 def home_view():
-    return {
-        "message": "foo_bar",
-    }
+    return redirect("/docs")

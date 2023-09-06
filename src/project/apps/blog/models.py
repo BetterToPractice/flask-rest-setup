@@ -18,5 +18,7 @@ class Post(db.Model):
     title = db.Column(db.String(80), unique=True, nullable=False)
     body = db.Column(db.Text(), unique=True, nullable=False)
 
+    user_id = db.Column(db.Integer, db.ForeignKey("user_users.id"))
+
     def __str__(self):
         return self.title
