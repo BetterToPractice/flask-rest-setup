@@ -32,6 +32,7 @@ def register_extensions(app):
         cors,
         db,
         helmet,
+        jwt,
         ma,
         migrate,
         pagination,
@@ -46,6 +47,7 @@ def register_extensions(app):
     db.init_app(app)
     migrate.init_app(app, db=db)
     bcrypt.init_app(app)
+    jwt.init_app(app)
     pagination.init_app(app)
     pluggy.init_app(
         app, plugin_name="plugins", hook_specs=plugins, apps_paths="apps", ignore_imports_prefix=[".models"]

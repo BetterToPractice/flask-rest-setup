@@ -38,8 +38,6 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=80), nullable=False),
     sa.Column('body', sa.Text(), nullable=False),
-    sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.ForeignKeyConstraint(['user_id'], ['user_users.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('body'),
     sa.UniqueConstraint('title')

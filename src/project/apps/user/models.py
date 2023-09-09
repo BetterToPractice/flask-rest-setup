@@ -10,10 +10,14 @@ class User(db.Model):
     name = db.Column(db.String(255), nullable=False)
     password = db.Column(db.String(255), nullable=False)
 
-    blog_posts = db.relationship("Post", backref="user", lazy="dynamic")
-
     def __str__(self):
         return self.username
 
     def set_password(self, raw_password):
         self.password = bcrypt.generate_password_hash(raw_password).decode("UTF-8")
+
+    def check_password(self, password):
+        try:
+            return bcrypt.check_password_hash(self.password, password)
+        except ValueError:
+            return False
