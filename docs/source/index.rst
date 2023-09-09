@@ -1,8 +1,3 @@
-.. flask setup documentation master file, created by
-   sphinx-quickstart on Sat Jul 29 17:59:27 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to flask setup's documentation!
 =======================================
 
@@ -10,11 +5,8 @@ Welcome to flask setup's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   0001-getting-started/0000-getting-started
+   0002-tutorial/0000-tutorial
+   0003-guide/0000-guide
+   0004-reference/0000-reference
+   0005-explanation/0000-explanation
