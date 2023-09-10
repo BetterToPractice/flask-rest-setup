@@ -1,11 +1,12 @@
 from flask_jwt_extended import create_access_token, create_refresh_token
 
-from project.apps.user.models import User
+from project.apps.user.models import User, UserProfile
 from project.extensions import db
 
 
 def register(register_data):
     user = User(**register_data)
+    user.profile = UserProfile()
     user.set_password(register_data["password"])
     db.session.add(user)
     db.session.commit()
