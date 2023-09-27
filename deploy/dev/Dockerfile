@@ -3,7 +3,6 @@ FROM python:3.11.2-slim-buster
 WORKDIR /usr/src/app
 
 ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONPATH /usr/src/app:/usr/src:/usr
 ENV PYTHONUNBUFFERED 1
 ENV FLASK_APP main.py
 ENV FLASK_ENV production
@@ -23,6 +22,6 @@ RUN chmod +x /usr/src/app/deploy/entrypoint.sh
 COPY deploy/dev/start-app.sh /usr/src/app/deploy/start-app.sh
 RUN chmod +x /usr/src/app/deploy/start-app.sh
 
-COPY src/project .
+COPY src .
 
 ENTRYPOINT ["/usr/src/app/deploy/entrypoint.sh"]

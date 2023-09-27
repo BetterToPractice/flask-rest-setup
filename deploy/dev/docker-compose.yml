@@ -6,9 +6,9 @@ services:
     build:
       context: ./../..
       dockerfile: deploy/dev/Dockerfile
-    command: flask run --reload
+    command: ./deploy/start-app.sh
     volumes:
-      - ../../src/project/:/usr/src/app/
+      - ../../src/:/usr/src/app/
       - deploy-folder-dev:/usr/src/app/deploy/
     ports:
       - "5000:5000"
@@ -19,7 +19,7 @@ services:
 
   db:
     container_name: "flask-setup-db-dev"
-    image: "postgres:13-alpine"
+    image: "postgres:14-alpine"
     volumes:
       - flask-setup-database-dev:/var/lib/postgresql/data/
     env_file:
