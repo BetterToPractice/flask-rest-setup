@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  app:
+    container_name: "flask-setup-app-prod"
+    build:
+      context: ./../..
+      dockerfile: /Dockerfile
+    command: ./deploy/start-app.sh
+    volumes:
+      - deploy-folder-prod:/usr/src/app/deploy/
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+  db:
+    container_name: "flask-setup-db-prod"
+    image: "postgres:14-alpine"
+    volumes:
+      - flask-setup-database-prod:/var/lib/postgresql/data/
+    env_file:
+      - .env.db
+
+volumes:
+  flask-setup-database-prod: {}
+  deploy-folder-prod: {}

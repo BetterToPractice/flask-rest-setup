@@ -260,6 +260,8 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
+# build stuff
+src/deploy/
 
 # iditor
 .idea/
