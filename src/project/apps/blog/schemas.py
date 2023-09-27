@@ -1,4 +1,4 @@
-from marshmallow import fields
+from marshmallow import fields, validate
 
 from project.apps.blog.models import Comment
 from project.apps.core.schemas import PaginationSchema
@@ -10,6 +10,12 @@ class CommentSchema(ma.SQLAlchemySchema):
 
     class Meta:
         model = Comment
+
+
+class PostParamsSchema(ma.Schema):
+    q = ma.String()
+    page = ma.Integer(missing=1)
+    size = ma.Integer(missing=20, validate=validate.Range(min=1, max=50, error="Invalid"))
 
 
 class PostSchema(ma.Schema):
@@ -25,4 +31,5 @@ class PostPaginationSchema(ma.Schema):
 
 
 post_pagination_schema = PostPaginationSchema()
+post_params_schema = PostParamsSchema()
 post_schema = PostSchema()

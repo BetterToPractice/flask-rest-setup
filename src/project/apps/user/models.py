@@ -44,4 +44,4 @@ class UserProfile(db.Model):
     phone_number = db.Column(db.String(15), nullable=True)
 
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), unique=True, nullable=False)
-    user = db.relationship('User', back_populates="profile")
+    user = db.relationship("User", back_populates="profile")

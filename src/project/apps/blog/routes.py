@@ -2,10 +2,7 @@ from flask import Blueprint, Flask
 
 from project.extensions import pluggy
 
-from .views import (
-    post_detail_view,
-    post_list_view,
-)
+from .views import post_detail_view, post_list_view
 
 impl = pluggy.get_impl()
 
