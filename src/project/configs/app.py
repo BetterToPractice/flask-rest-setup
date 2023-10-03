@@ -34,6 +34,7 @@ def register_extensions(app):
         helmet,
         jwt,
         ma,
+        mail,
         migrate,
         pagination,
         pluggy,
@@ -48,6 +49,7 @@ def register_extensions(app):
     migrate.init_app(app, db=db)
     bcrypt.init_app(app)
     jwt.init_app(app)
+    mail.init_app(app)
     pagination.init_app(app)
     pluggy.init_app(
         app, plugin_name="plugins", hook_specs=plugins, apps_paths="apps", ignore_imports_prefix=[".models"]
