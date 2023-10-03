@@ -15,8 +15,8 @@ def register(register_data):
     register_mail.send(
         recipients=user.email,
         context={
-            'name': user.name,
-        }
+            "name": user.name,
+        },
     )
     return user
 
