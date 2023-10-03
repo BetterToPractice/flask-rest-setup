@@ -47,3 +47,4 @@ class Settings:
     MAIL_USE_TLS = os.environ.get("MAIL_USE_TLS", default=True)
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME", default="user")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD", default="password")
+    MAIL_DEFAULT_SENDER = os.environ.get("MAIL_DEFAULT_SENDER", default="noreply@example.com")
