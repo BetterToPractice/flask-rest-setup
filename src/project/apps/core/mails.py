@@ -1,7 +1,7 @@
 from flask import current_app, render_template
 from flask_mail import Message
 
-from extensions import mail
+from project.extensions import mail
 
 
 class BaseMailTemplate:
