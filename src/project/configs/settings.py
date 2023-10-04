@@ -38,3 +38,13 @@ class Settings:
     # https://flask-cors.corydolphin.com/en/latest/api.html
     CORS_ALLOW_HEADERS = "*"
     CORS_ORIGINS = "*"
+
+    # Mails
+    # https://pythonhosted.org/Flask-Mail/
+    MAIL_ENABLED = os.environ.get("MAIL_ENABLED", default=False)
+    MAIL_SERVER = os.environ.get("MAIL_SERVER", default="sandbox.smtp.mailtrap.io")
+    MAIL_PORT = os.environ.get("MAIL_PORT", default=25)
+    MAIL_USE_TLS = os.environ.get("MAIL_USE_TLS", default=True)
+    MAIL_USERNAME = os.environ.get("MAIL_USERNAME", default="user")
+    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD", default="password")
+    MAIL_DEFAULT_SENDER = os.environ.get("MAIL_DEFAULT_SENDER", default="noreply@example.com")
