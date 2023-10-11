@@ -14,6 +14,7 @@ load_dotenv(dotenv_path=ROOT_DIR)
 
 class Settings:
     APP_DIR = Path(__file__).parent.parent
+    SECRET_KEY = os.environ.get("SECRET_KEY", default="foobar")
     APP_NAME = "project"
     FLASK_DEBUG = os.environ.get("DEBUG", default=False)
     FLASK_ENV = os.environ.get("FLASK_ENV", default="development")
@@ -48,3 +49,7 @@ class Settings:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME", default="user")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD", default="password")
     MAIL_DEFAULT_SENDER = os.environ.get("MAIL_DEFAULT_SENDER", default="noreply@example.com")
+
+    # Frontend
+    FRONTEND_BASE_URL = os.environ.get("FRONTEND_BASE_URL", default="http://localhost:3000")
+    FRONTEND_ACTIVATE_URL = FRONTEND_BASE_URL + "/activate/{token}"

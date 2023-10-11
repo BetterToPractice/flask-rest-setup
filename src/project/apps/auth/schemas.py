@@ -66,6 +66,11 @@ class TokenResponseSchema(ma.Schema):
     refresh = ma.String()
 
 
+class ActivateAccountSchema(ma.Schema):
+    token = ma.String(required=True)
+
+
 register_schema = RegisterSchema()
 login_schema = LoginSchema()
+activate_account_schema = ActivateAccountSchema()
 token_response_schema = TokenResponseSchema()
