@@ -14,6 +14,8 @@ class User(db.Model):
     name = db.Column(db.String(255), nullable=False)
     password = db.Column(db.String(255), nullable=False)
 
+    is_email_confirmed = db.Column(db.Boolean, default=False)
+
     profile = db.relationship("UserProfile", back_populates="user", uselist=False)
 
     def __str__(self):

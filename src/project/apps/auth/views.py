@@ -1,6 +1,7 @@
 from apifairy import body, response
 
 from project.apps.auth.schemas import (
+    activate_account_schema,
     login_schema,
     register_schema,
     token_response_schema,
@@ -38,3 +39,11 @@ def register_view(register_data):
     user = services.register(register_data=register_data)
     token = services.create_token(user)
     return token
+
+
+@body(activate_account_schema)
+def activate_account_view(token_data):
+    is_success = services.activate_account(token_data)
+    if is_success:
+        return "", 202
+    return "", 400
