@@ -18,7 +18,7 @@ cp .env.example .env
 pip install -r requirements.txt
 
 # Run migrate
-flask db upgrade
+flask db upgrade -d project/migrations
 
 # Run application
 export FLASK_APP=main.py
